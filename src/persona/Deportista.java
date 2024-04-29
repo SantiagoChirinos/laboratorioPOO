@@ -69,4 +69,11 @@ public class Deportista extends Persona {
         }
     }
     
+    public void analizarRitmoCardiaco(){
+        if(this.ritmoCardiaco>100){
+            System.out.println("Ritmo cardicalo en reposo alto, se recomienda parar de hacer ejercicio");
+        } else{
+            System.out.println("Ritmo cardiaco normal");
+        }
+    }
 }
