@@ -48,6 +48,7 @@ public class Entrenador extends Persona{
     }
     
     public String determinarRutina(String tipoEjercicio,int grasaCorporal){
+        //este metodo establece los objetivos a cumplir
         if("Reduccion de peso".equals(tipoEjercicio) || grasaCorporal>30){
             return("Correr 25km");
         }if("Tonificacion".equals(tipoEjercicio)){
