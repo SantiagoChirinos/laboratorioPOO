@@ -34,5 +34,28 @@ public class Entrenador extends Persona{
         this.especialidad = especialidad;
     }
     
+    public String determinarRutina(int grasaCorporal, String tipoEjercicio){
+        //este metodo sugiere la rutina
+        if("Reduccion de peso".equals(tipoEjercicio) || grasaCorporal>30){
+            return("cardio");
+        }if("Tonificacion".equals(tipoEjercicio)){
+            return ("Aerobicos");
+        }if("Flexibilidad".equals(tipoEjercicio)){
+            return("Yoga");
+        }else{
+            return("Dia libre");
+        }
+    }
     
+    public String determinarRutina(String tipoEjercicio,int grasaCorporal){
+        if("Reduccion de peso".equals(tipoEjercicio) || grasaCorporal>30){
+            return("Correr 25km");
+        }if("Tonificacion".equals(tipoEjercicio)){
+            return("50 series de 10 repeticiones de levantamiento de pesas");
+        }if("Flexibilidad".equals(tipoEjercicio)){
+            return("15 minutos de yoga cada 3 horas");
+        } else{
+            return("descanso");
+        }
+    }
 }
