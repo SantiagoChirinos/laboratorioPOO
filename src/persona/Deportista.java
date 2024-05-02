@@ -57,8 +57,7 @@ public class Deportista extends Persona {
         return grasaCorporal;
     }
     
-    @Override
-    public String calcularEstadoSalud(){
+    public String determinarSaludPeso(){
         int grasaCorporal=this.calcularIMC();
             if((grasaCorporal<25 && this.sexo=='F')||(grasaCorporal<15 && this.sexo=='M')){
                 return ("Delgado");
@@ -69,11 +68,13 @@ public class Deportista extends Persona {
         }
     }
     
-    public void analizarRitmoCardiaco(){
+    @Override
+    public String calcularEstadoSalud(){
         if(this.ritmoCardiaco>100){
-            System.out.println("Ritmo cardicalo en reposo alto, se recomienda parar de hacer ejercicio");
+            return ("Ritmo cardicalo en reposo alto, se recomienda parar de hacer ejercicio");
         } else{
-            System.out.println("Ritmo cardiaco normal");
+            return ("Ritmo cardiaco normal");
         }
     }
+    
 }
