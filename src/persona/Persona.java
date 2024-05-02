@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Persona {
+public abstract class Persona {
     protected int cedula;
     protected String nombre;
     protected int edad;
@@ -34,6 +34,11 @@ public class Persona {
         this.edad = 0;
         this.peso = 0;
         this.direccion = "";
+    }
+    
+    public float obtenerValorIMC(){
+        float IMC=(float) (this.peso/(Math.pow(this.altura, 2)));
+        return IMC;
     }
     
     public String calcularEstadoSalud(){
@@ -67,11 +72,6 @@ public class Persona {
         }else{
             return 2;
         }
-    }
-    
-    public float obtenerValorIMC(){
-        float IMC=(float) (this.peso/(Math.pow(this.altura, 2)));
-        return IMC;
     }
     
     public boolean esMayorDeEdad(){
@@ -234,8 +234,8 @@ public class Persona {
           
     }
     
-
-    public  Persona pedidaDeDatos(){
+    //lo dejo como plantilla para los otros constructores
+    /*public  Persona pedidaDeDatos();{
         Scanner scanner= new Scanner(System.in);
         
         String nombre = validarNombre(scanner);
@@ -256,7 +256,8 @@ public class Persona {
         scanner.nextLine();
         
         String direccion = validarDireccion(scanner);
-        
-        return new Persona (cedula, nombre, edad, sexo, peso, altura, direccion);
-    }
+    }*/
+    
+    //no se que poner como abstracto
+    public abstract void placeholder();
 }
