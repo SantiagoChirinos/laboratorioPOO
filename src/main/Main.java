@@ -30,9 +30,5 @@ public class Main {
                     Deportista deportista1= new Deportista();
             } 
         }
-        
-        
-        
-        
-        
     }
+}

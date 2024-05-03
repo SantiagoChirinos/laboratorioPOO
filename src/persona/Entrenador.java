@@ -59,4 +59,20 @@ public class Entrenador extends Persona{
             return("descanso");
         }
     }
+    
+    @Override
+    public void imprimirDatos(){
+        System.out.println("-Datos de persona-");
+        System.out.println("-Cedula: " + getCedula());
+        System.out.println("-Nombre: "+ getNombre());
+        System.out.println("-Edad: " + getEdad());
+        System.out.println("-Sexo: " + getSexo());
+        System.out.println("-Peso: " + getPeso());
+        System.out.println("-Altura: " + getAltura());
+        System.out.println("-Direccion: " + getDireccion());
+        System.out.println("-Experencia laboral: " + this.getExperienciaLaboral());
+        System.out.println("-Especialidad: " + this.getEspecialidad());
+    }
+    
+    
 }

@@ -77,4 +77,18 @@ public class Deportista extends Persona {
         }
     }
     
+    @Override
+    public void imprimirDatos(){
+        System.out.println("-Datos de persona-");
+        System.out.println("-Cedula: " + getCedula());
+        System.out.println("-Nombre: "+ getNombre());
+        System.out.println("-Edad: " + getEdad());
+        System.out.println("-Sexo: " + getSexo());
+        System.out.println("-Peso: " + getPeso());
+        System.out.println("-Altura: " + getAltura());
+        System.out.println("-Direccion: " + getDireccion());
+        System.out.println("-Ritmo cardiaco: " + this.getRitmoCardiaco());
+        System.out.println("-Frecuencia entrenamiento: " + this.getFrecuenciaEntrenamiento());
+        System.out.println("-Tipo ejercicio: " + this.getTipoEjercicio());
+    }
 }

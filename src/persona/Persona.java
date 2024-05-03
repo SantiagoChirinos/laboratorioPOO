@@ -101,16 +101,7 @@ public abstract class Persona {
        return matcher.matches();
     }
 
-    public void imprimirDatosPer(){
-        System.out.println("-Datos de persona-");
-        System.out.println("-Cedula: " + getCedula());
-        System.out.println("-Nombre: "+ getNombre());
-        System.out.println("-Edad: " + getEdad());
-        System.out.println("-Sexo: " + getSexo());
-        System.out.println("-Peso: " + getPeso());
-        System.out.println("-Altura: " + getAltura());
-        System.out.println("-Direccion: " + getDireccion());
-    }
+    public abstract void imprimirDatos();
 
     public int getCedula() {
         return cedula;
@@ -170,11 +161,17 @@ public abstract class Persona {
     
     public int validarInt(Scanner scanner, int limiteSuperior, int limiteInferior){
         while(true){
-            int dato=scanner.nextInt();
-            if(dato>=limiteInferior && dato<=limiteSuperior){
-                return dato;
-            } else{
-                System.out.println("Dato fuera de rango!");
+            try{
+                int dato=scanner.nextInt();
+                if(dato>=limiteInferior && dato<=limiteSuperior){
+                    return dato;
+                } else{
+                    System.out.println("Dato fuera de rango!");
+                }
+            }
+            catch(java.util.InputMismatchException excepcion){
+                System.out.println("Ha ingresado un tipo de dato invalido");
+                scanner.nextLine();
             }
         }
     }
@@ -182,12 +179,19 @@ public abstract class Persona {
     
     
     public float validarFloat(Scanner scanner, float limiteSuperior, float limiteInferior){
+        float dato;
         while(true){
-            float dato=(float)scanner.nextFloat();
-            if(dato>=limiteInferior && dato<=limiteSuperior){
-                return dato;
-            } else{
-                System.out.println("Dato fuera de rango!");
+            try{
+                dato=(float)scanner.nextFloat();
+                if(dato>=limiteInferior && dato<=limiteSuperior){
+                    return dato;
+                } else{
+                    System.out.println("Dato fuera de rango!");
+                }
+            }
+            catch(java.util.InputMismatchException excepcion){
+                System.out.println("Ha ingresado un tipo de dato invalido");
+                scanner.nextLine();
             }
         }
     }
@@ -258,6 +262,4 @@ public abstract class Persona {
         String direccion = validarDireccion(scanner);
     }*/
     
-    //no se que poner como abstracto
-    public abstract void placeholder();
 }
